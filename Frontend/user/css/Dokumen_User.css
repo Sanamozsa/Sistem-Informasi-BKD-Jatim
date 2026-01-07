@@ -1,0 +1,153 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(to bottom, #0b1b5c, #001aff);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 20px;
+    font-weight: bold;
+    background: #0b1b5c;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    padding: 15px 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.menu li:hover,
+.menu li.active {
+    background: #1f3cff;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 15px 20px;
+    background: #001aff;
+    cursor: pointer;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    padding: 15px 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content {
+    background: #e6e6e6;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Search */
+.search {
+    padding: 8px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+    width: 100%;
+    background: #fff;
+    border-collapse: collapse;
+}
+
+th {
+    background: #d9d9d9;
+    text-align: left;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* =========================
+   STATUS
+========================= */
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.status.approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+    padding: 5px 10px;
+    border: none;
+    background: #001aff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background: #000ecc;
+}

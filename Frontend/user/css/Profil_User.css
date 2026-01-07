@@ -1,0 +1,165 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background: #f2f2f2;
+}
+
+/* LAYOUT */
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(to bottom, #0b1b5c, #001aff);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 20px;
+    font-weight: bold;
+    background: #0b1b5c;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    padding: 15px 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.menu li:hover,
+.menu li.active {
+    background: #1f3cff;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 15px 20px;
+    background: #001aff;
+    cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.header {
+    background: #fff;
+    padding: 15px 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    background: #e6e6e6;
+    padding: 20px;
+    flex: 1;
+}
+
+/* TITLE */
+.page-title {
+    margin-bottom: 15px;
+}
+
+.page-title p {
+    font-size: 13px;
+    color: #555;
+}
+
+/* USER CARD */
+.user-card {
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.user-photo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.photo {
+    width: 90px;
+    height: 90px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.btn-photo {
+    padding: 6px 12px;
+    border: 1px solid #aaa;
+    background: #f9f9f9;
+    cursor: pointer;
+}
+
+/* BOX */
+.box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.box hr {
+    margin: 10px 0 15px;
+}
+
+/* FORM */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-grid label {
+    font-size: 13px;
+}
+
+.form-grid input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #999;
+    background: #eaeaea;
+}
+
+/* SECURITY */
+.security-item {
+    margin-bottom: 15px;
+}
+
+.security-item a {
+    display: block;
+    font-size: 13px;
+    color: #1f3cff;
+    text-decoration: none;
+}

@@ -1,0 +1,215 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(to bottom, #0b1b5c, #001aff);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 20px;
+    font-weight: bold;
+    background: #0b1b5c;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    padding: 15px 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.menu li:hover,
+.menu li.active {
+    background: #1f3cff;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 15px 20px;
+    background: #001aff;
+    cursor: pointer;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* =========================
+   USER INFO
+========================= */
+.user-info {
+    background: #eaeaea;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+/* =========================
+   SUMMARY CARD
+========================= */
+.summary {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.card h4 {
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.card.blue {
+    background: #1e88ff;
+}
+
+.card.orange {
+    background: #f9a825;
+}
+
+/* =========================
+   BOX SECTION
+========================= */
+.box {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.notif {
+    height: 40px;
+    background: #e0e0e0;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+/* =========================
+   TABLE
+========================= */
+.doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.doc-table th,
+.doc-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.doc-table th {
+    background: #1e5ad7;
+    color: white;
+}
+
+.doc-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* =========================
+   STATUS
+========================= */
+.status {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.status.lengkap {
+    background: #2ecc71;
+}
+
+.status.belum {
+    background: #e67e22;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn.view {
+    background: #3498db;
+    color: white;
+}
+
+.btn.download {
+    background: #2ecc71;
+    color: white;
+    margin-left: 5px;
+}
