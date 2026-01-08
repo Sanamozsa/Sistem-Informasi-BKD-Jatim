@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin BKD</title>
+     <link rel="stylesheet" href="css/Dashboard_Admin.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span>Logo</span>
+            <h3>Admin BKD</h3>
+        </div>
+
+        <ul class="menu">
+            <li class="active">Beranda</li>
+            <li>Data Pegawai</li>
+            <li>Kategori Arsip</li>
+            <li>Kenaikan Pangkat</li>
+            <li>Cuti</li>
+            <li>Input Arsip Baru</li>
+            <li>Mutasi</li>
+            <li>Log Aktivitas</li>
+            <li>Pengaturan</li>
+        </ul>
+
+        <div class="logout">
+            Keluar
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <input type="text" placeholder="Cari Nama Dokumen dan nama pegawai....">
+            <div class="profile">
+                <div class="avatar"></div>
+                <div>
+                    <strong>Samuel Nathaniel</strong><br>
+                    <small>Super Admin</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD CONTENT -->
+        <section class="content">
+
+            <!-- INFO BOX -->
+            <div class="info-grid">
+                <div class="box">Total Dokumen Terarsip</div>
+                <div class="box">Pegawai Aktif</div>
+                <div class="box">Permintaan Verifikasi</div>
+                <div class="box">Nama Pegawai</div>
+                <div class="box large">Upload Dokumen Perbulan</div>
+            </div>
+
+            <!-- TABLE -->
+            <div class="table-box">
+                <h3>Tabel Arsip</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Pegawai</th>
+                            <th>NIP</th>
+                            <th>Tanggal Upload</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight">
+                            <td>Samuel Nathaniel</td>
+                            <td>22081010314</td>
+                            <td>1-Januari-2026</td>
+                            <td>
+                                <a href="#">Download</a> |
+                                <a href="#">Lihat</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Samuel Nathaniel</td>
+                            <td>22081010314</td>
+                            <td>1-Januari-2026</td>
+                            <td>
+                                <a href="#">Download</a> |
+                                <a href="#">Lihat</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Samuel Nathaniel</td>
+                            <td>22081010314</td>
+                            <td>1-Januari-2026</td>
+                            <td>
+                                <a href="#">Download</a> |
+                                <a href="#">Lihat</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+</div>
+
+</body>
+</html>
