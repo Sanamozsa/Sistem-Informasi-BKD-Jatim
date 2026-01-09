@@ -1,0 +1,213 @@
+/* =====================
+   RESET & GLOBAL
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #e5e5e5;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* =====================
+   SIDEBAR
+===================== */
+.sidebar {
+    width: 220px;
+    background: #3e3f44;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.logo-box {
+    width: 40px;
+    height: 40px;
+    background: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/* MENU */
+.menu {
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.menu li a:hover {
+    background: #2f80ed;
+    font-weight: bold;
+}
+
+.menu li.active a {
+    background: #2f80ed;
+    font-weight: bold;
+}
+
+.menu li a:visited {
+    color: white;
+}
+
+/* LOGOUT */
+.logout {
+    border-top: 1px solid #555;
+}
+
+.logout a {
+    display: block;
+    padding: 20px 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.logout a:hover {
+    background: #eb5757;
+}
+
+/* =====================
+   MAIN & TOPBAR
+===================== */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    background: #2f80ed;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar input {
+    width: 420px;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #ddd;
+    border-radius: 50%;
+}
+
+/* =====================
+   CONTENT
+===================== */
+.content {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* =====================
+   FORM
+===================== */
+.form-box {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.form-row label {
+    width: 120px;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+    padding: 6px;
+}
+
+.form-action {
+    margin-left: auto;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: #2f80ed;
+    color: white;
+}
+
+.btn.clear {
+    background: #ccc;
+}
+
+/* =====================
+   TABLE
+===================== */
+.table-box {
+    margin-top: 20px;
+}
+
+.search {
+    margin: 10px 0;
+    padding: 6px;
+    width: 250px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f1f1f1;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}

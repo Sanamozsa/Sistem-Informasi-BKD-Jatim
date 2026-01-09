@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengguna - Admin BKD</title>
+    <link rel="stylesheet" href="css/Pengguna_Admin.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div>
+            <!-- LOGO -->
+            <div class="logo">
+                <div class="logo-box">Logo</div>
+                <span>Admin BKD</span>
+            </div>
+
+            <!-- MENU -->
+            <ul class="menu">
+                <li>
+                    <a href="Dashboard_Admin.html">Beranda</a>
+                </li>
+                <li class="active">
+                    <a href="Pengguna_Admin.html">Pengguna</a>
+                </li>
+                <li>
+                    <a href="#">Klasifikasi Arsip</a>
+                </li>
+                <li>
+                    <a href="#">Manajemen Arsip</a>
+                </li>
+                <li>
+                    <a href="#">Laporan Arsip</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- LOGOUT -->
+        <div class="logout">
+            <a href="#">Keluar</a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <input type="text" placeholder="Cari Nama Dokumen dan Nama Pegawai...">
+
+            <div class="profile">
+                <div class="avatar"></div>
+                <div>
+                    <strong>Samuel Nathaniel</strong><br>
+                    <small>Super Admin</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- PAGE CONTENT -->
+        <section class="content">
+
+            <h3>Manajemen Pengguna</h3>
+
+            <!-- FORM -->
+            <div class="form-box">
+                <div class="form-row">
+                    <label>Nama Lengkap</label>
+                    <input type="text">
+                    <label>NIP</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-row">
+                    <label>Username</label>
+                    <input type="text">
+                </div>
+
+                <div class="form-row">
+                    <label>Email</label>
+                    <input type="email">
+                </div>
+
+                <div class="form-row">
+                    <label>Password</label>
+                    <input type="password">
+                </div>
+
+                <div class="form-row">
+                    <label>Role</label>
+                    <select>
+                        <option>Admin</option>
+                        <option>User</option>
+                    </select>
+
+                    <div class="form-action">
+                        <button class="btn clear">Clear</button>
+                        <button class="btn primary">Tambahkan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLE -->
+            <div class="table-box">
+                <h3>Daftar Pengguna</h3>
+
+                <input type="text" class="search" placeholder="Cari Nama Pengguna...">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Username</th>
+                            <th>NIP</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Samuel Nathaniel</td>
+                            <td>samuel</td>
+                            <td>22081010314</td>
+                            <td>Admin</td>
+                            <td>Tidak Aktif</td>
+                            <td>
+                                <a href="#">Edit</a> |
+                                <a href="#">Hapus</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+</div>
+
+</body>
+</html>
