@@ -38,8 +38,10 @@ body {
     text-align: center;
 }
 
+/* MENU */
 .menu {
     list-style: none;
+    flex: 1;
 }
 
 .menu li {
@@ -57,11 +59,19 @@ body {
     background: #1f3cff;
 }
 
-.logout {
+/* LOGOUT */
+.menu li.logout {
     margin-top: auto;
-    padding: 15px 20px;
     background: #001aff;
-    cursor: pointer;
+}
+
+.menu li.logout a {
+    color: #ffdede;
+    font-weight: bold;
+}
+
+.menu li.logout:hover {
+    background: #ff2e2e;
 }
 
 /* =========================
@@ -72,7 +82,6 @@ body {
     padding: 20px;
 }
 
-/* Header */
 .header {
     background: #fff;
     padding: 15px;
@@ -100,7 +109,7 @@ body {
 }
 
 /* =========================
-   SUMMARY CARD
+   SUMMARY
 ========================= */
 .summary {
     display: flex;
@@ -113,10 +122,6 @@ body {
     padding: 20px;
     color: #fff;
     border-radius: 5px;
-}
-
-.card h4 {
-    font-size: 16px;
 }
 
 .card p {
@@ -133,7 +138,7 @@ body {
 }
 
 /* =========================
-   BOX SECTION
+   BOX
 ========================= */
 .box {
     background: #fff;
@@ -168,10 +173,6 @@ body {
 .doc-table th {
     background: #1e5ad7;
     color: white;
-}
-
-.doc-table tr:nth-child(even) {
-    background: #f9f9f9;
 }
 
 /* =========================

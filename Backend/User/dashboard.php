@@ -2,7 +2,8 @@
 session_start();
 include "../config/koneksi.php";
 
-if (!isset($_SESSION['login']) || $_SESSION['role'] != 'pengguna') {
+/* PROTEKSI LOGIN */
+if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'pengguna') {
     header("Location: ../../Frontend/Login.html");
     exit;
 }
@@ -25,22 +26,25 @@ $belumLengkap = mysqli_num_rows(mysqli_query($conn,
 ));
 
 /* NOTIFIKASI */
-$notif = mysqli_query($conn,
+$notifikasi = mysqli_query($conn,
     "SELECT * FROM notifikasi 
      WHERE id_user='$id_user'
-     ORDER BY created_at DESC LIMIT 2"
+     ORDER BY created_at DESC LIMIT 3"
 );
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard User</title>
+    <title>Dashboard User - Arsip Digital</title>
     <link rel="stylesheet" href="../../Frontend/User/css/dashboard_user.css">
 </head>
 <body>
 
 <div class="container">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar">
         <h2 class="logo">Digital Dokumen</h2>
         <ul class="menu">
@@ -48,43 +52,63 @@ $notif = mysqli_query($conn,
             <li><a href="dokumen.php">Dokumen Saya</a></li>
             <li><a href="notifikasi.php">Notifikasi</a></li>
             <li><a href="profil.php">Profil</a></li>
+
+            <!-- LOGOUT -->
+            <li class="logout">
+                <a href="../auth/logout.php"
+                   onclick="return confirm('Yakin ingin logout?')">
+                   Logout
+                </a>
+            </li>
         </ul>
     </aside>
 
+    <!-- CONTENT -->
     <main class="content">
+
         <header class="header">
             <h1>Digital Employer Arsip Dokumen</h1>
         </header>
 
+        <!-- INFO USER -->
         <section class="user-info">
             <div>
                 <h3>Selamat Datang, <?= $user['nama_lengkap']; ?></h3>
                 <p>NIP : <?= $user['nip']; ?></p>
-                <p>Jabatan : <?= $user['jabatan'] ?? '-'; ?></p>
+                <p>Role : Pengguna</p>
             </div>
             <div class="avatar"></div>
         </section>
 
+        <!-- RINGKASAN -->
         <section class="summary">
             <div class="card blue">
                 <h4>Dokumen Saya</h4>
                 <p><?= $totalDokumen; ?></p>
             </div>
             <div class="card orange">
-                <h4>Belum Lengkap</h4>
+                <h4>Belum Diverifikasi</h4>
                 <p><?= $belumLengkap; ?></p>
             </div>
         </section>
 
+        <!-- NOTIFIKASI -->
         <section class="box">
             <h3>Notifikasi Terbaru</h3>
-            <?php while ($n = mysqli_fetch_assoc($notif)) { ?>
-                <div class="notif">
-                    <strong><?= $n['judul']; ?></strong><br>
-                    <?= $n['pesan']; ?>
-                </div>
+
+            <?php if (mysqli_num_rows($notifikasi) > 0) { ?>
+                <?php while ($n = mysqli_fetch_assoc($notifikasi)) { ?>
+                    <div class="notif">
+                        <strong><?= $n['judul']; ?></strong><br>
+                        <?= $n['pesan']; ?>
+                    </div>
+                <?php } ?>
+            <?php } else { ?>
+                <p>Tidak ada notifikasi.</p>
             <?php } ?>
+
         </section>
+
     </main>
 </div>
 

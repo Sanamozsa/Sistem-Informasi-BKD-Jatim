@@ -8,16 +8,24 @@
 <body>
 
 <div class="container">
+    <!-- SIDEBAR -->
     <aside class="sidebar">
-        <h2 class="logo">Digital Dokumen</h2>
+        <div class="logo">Digital Dokumen</div>
+
         <ul class="menu">
             <li class="active">Dashboard</li>
             <li><a href="dokumen_user.html">Dokumen Saya</a></li>
             <li><a href="Notifikasi_User.html">Notifikasi</a></li>
             <li><a href="Profil_User.html">Profil</a></li>
+
+            <!-- LOGOUT -->
+            <li class="logout">
+                <a href="#" onclick="logout()">Logout</a>
+            </li>
         </ul>
     </aside>
 
+    <!-- CONTENT -->
     <main class="content">
         <header class="header">
             <h1>Digital Employer Arsip Dokumen</h1>
@@ -45,7 +53,36 @@
 
         <section class="box">
             <h3>Daftar Dokumen Saya</h3>
-            <!-- tabel tetap -->
+
+            <table class="doc-table">
+                <thead>
+                    <tr>
+                        <th>Nama Dokumen</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SK Pengangkatan</td>
+                        <td>01-01-2026</td>
+                        <td><span class="status lengkap">Lengkap</span></td>
+                        <td>
+                            <button class="btn view">Lihat</button>
+                            <button class="btn download">Download</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ijazah</td>
+                        <td>05-01-2026</td>
+                        <td><span class="status belum">Belum</span></td>
+                        <td>
+                            <button class="btn view">Lihat</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section class="box">
@@ -55,6 +92,15 @@
         </section>
     </main>
 </div>
+
+<!-- SCRIPT LOGOUT -->
+<script>
+function logout() {
+    if (confirm("Yakin ingin logout?")) {
+        window.location.href = "Login.html";
+    }
+}
+</script>
 
 </body>
 </html>
