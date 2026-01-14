@@ -1,39 +1,49 @@
-<!DOCTYPE html>
+<?php
+// ===============================
+// DATA NOTIFIKASI (contoh, nanti dari database)
+// ===============================
+$notifikasi = [
+    ["jenis"=>"Dokumen","judul"=>"Dokumen SK Pengangkatan disetujui"],
+    ["jenis"=>"Verifikasi","judul"=>"Ijazah S1 sedang diverifikasi"],
+    ["jenis"=>"Sistem","judul"=>"Pemeliharaan sistem malam ini"],
+    ["jenis"=>"Dokumen","judul"=>"Dokumen KTP perlu diperbarui"],
+    ["jenis"=>"Verifikasi","judul"=>"Data profil berhasil diverifikasi"],
+    ["jenis"=>"Sistem","judul"=>"Password berhasil diubah"]
+];
+
+// ===============================
+// OUTPUT HTML
+// ===============================
+echo '<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <title>Notifikasi User</title>
     <link rel="stylesheet" href="css/notifikasi_user.css">
-
 </head>
-
 <body>
 
 <div class="app">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="logo">Digital Dokumen</div>
 
         <ul class="menu">
-            <li><a href="dashboard_user.html">Dashboard</a></li>
-            <li><a href="dokumen_user.html">Dokumen Saya</a></li>
+            <li><a href="Dashboard_User.php">Dashboard</a></li>
+            <li><a href="Dokumen_User.php">Dokumen Saya</a></li>
             <li class="active">Notifikasi</li>
-            <li><a href="Profil_User.html">Profil</a></li>
+            <li><a href="Profil_User.php">Profil</a></li>
         </ul>
 
-        <div class="logout">Keluar</div>
+        <div class="logout"><a href="Logout.php">Keluar</a></div>
     </aside>
 
-    <!-- CONTENT -->
     <main class="content">
 
-        <!-- HEADER -->
         <header class="header">
             Digital Employer Arsip Dokumen
         </header>
 
-        <!-- MAIN CONTENT -->
         <section class="main-content">
 
             <div class="notif-header">
@@ -44,7 +54,6 @@
                 <button class="btn-mark">Tandai Semua Telah Dibaca</button>
             </div>
 
-            <!-- TABS -->
             <div class="tabs">
                 <span class="tab active">Semua</span>
                 <span class="tab">Dokumen</span>
@@ -52,14 +61,13 @@
                 <span class="tab">Sistem</span>
             </div>
 
-            <!-- LIST -->
-            <div class="notif-list">
-                <div class="notif-item"></div>
-                <div class="notif-item"></div>
-                <div class="notif-item"></div>
-                <div class="notif-item"></div>
-                <div class="notif-item"></div>
-                <div class="notif-item"></div>
+            <div class="notif-list">';
+            
+foreach ($notifikasi as $n) {
+    echo '<div class="notif-item">'.$n['judul'].'</div>';
+}
+
+echo '
             </div>
 
         </section>
@@ -69,4 +77,5 @@
 </div>
 
 </body>
-</html>
+</html>';
+?>

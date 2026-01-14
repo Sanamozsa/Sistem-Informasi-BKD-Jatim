@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php
+echo '<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,6 @@
     <div class="login-box">
         <h2>Login</h2>
 
-        <!-- HUBUNGKAN KE BACKEND -->
         <form action="../Backend/auth/login.php" method="POST">
 
             <label>Username</label>
@@ -49,4 +49,5 @@
 
 <script src="login.js"></script>
 </body>
-</html>
+</html>';
+?>

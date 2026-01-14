@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?php
+// ===============================
+// DATA ADMIN (contoh, nanti dari session / database)
+// ===============================
+$nama_admin = "Samuel Nathaniel";
+$role_admin = "Super Admin";
+
+// ===============================
+// OUTPUT HTML
+// ===============================
+echo '<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +17,7 @@
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <aside class="sidebar">
-    <!-- BAGIAN ATAS -->
     <div>
         <div class="logo">
             <span>Logo</span>
@@ -18,10 +26,10 @@
 
         <ul class="menu">
             <li class="active">
-                <a href="Dashboard_Admin.html">Beranda</a>
+                <a href="Dashboard_Admin.php">Beranda</a>
             </li>
             <li>
-                <a href="Pengguna_Admin.html">Pengguna</a>
+                <a href="Pengguna_Admin.php">Pengguna</a>
             </li>
             <li>
                 <a href="#">Klasifikasi Arsip</a>
@@ -35,28 +43,24 @@
         </ul>
     </div>
 
-    <!-- BAGIAN BAWAH -->
     <div class="logout">
-        <a href="#">Keluar</a>
+        <a href="Logout.php">Keluar</a>
     </div>
 </aside>
 
-<!-- MAIN -->
 <main class="main">
 
-    <!-- TOPBAR -->
     <header class="topbar">
         <input type="text" placeholder="Cari Nama Dokumen dan Nama Pegawai...">
         <div class="profile">
             <div class="avatar"></div>
             <div>
-                <strong>Samuel Nathaniel</strong><br>
-                <small>Super Admin</small>
+                <strong>'.$nama_admin.'</strong><br>
+                <small>'.$role_admin.'</small>
             </div>
         </div>
     </header>
 
-    <!-- CONTENT -->
     <section class="content">
 
         <div class="info-grid">
@@ -96,4 +100,5 @@
 </main>
 
 </body>
-</html>
+</html>';
+?>
