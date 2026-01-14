@@ -1,25 +1,9 @@
-<?php
-// ===============================
-// DATA NOTIFIKASI (contoh, nanti dari database)
-// ===============================
-$notifikasi = [
-    ["jenis"=>"Dokumen","judul"=>"Dokumen SK Pengangkatan disetujui"],
-    ["jenis"=>"Verifikasi","judul"=>"Ijazah S1 sedang diverifikasi"],
-    ["jenis"=>"Sistem","judul"=>"Pemeliharaan sistem malam ini"],
-    ["jenis"=>"Dokumen","judul"=>"Dokumen KTP perlu diperbarui"],
-    ["jenis"=>"Verifikasi","judul"=>"Data profil berhasil diverifikasi"],
-    ["jenis"=>"Sistem","judul"=>"Password berhasil diubah"]
-];
-
-// ===============================
-// OUTPUT HTML
-// ===============================
-echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <title>Notifikasi User</title>
-    <link rel="stylesheet" href="css/notifikasi_user.css">
+    <link rel="stylesheet" href="../user/css/Notifikasi_User.css">
 </head>
 <body>
 
@@ -27,15 +11,15 @@ echo '<!DOCTYPE html>
 
     <aside class="sidebar">
         <div class="logo">Digital Dokumen</div>
-
         <ul class="menu">
             <li><a href="Dashboard_User.php">Dashboard</a></li>
             <li><a href="Dokumen_User.php">Dokumen Saya</a></li>
             <li class="active">Notifikasi</li>
             <li><a href="Profil_User.php">Profil</a></li>
         </ul>
-
-        <div class="logout"><a href="Logout.php">Keluar</a></div>
+        <div class="logout">
+            <a href="../../Backend/auth/logout.php">Keluar</a>
+        </div>
     </aside>
 
     <main class="content">
@@ -45,37 +29,43 @@ echo '<!DOCTYPE html>
         </header>
 
         <section class="main-content">
+            <h3>Notifikasi</h3>
 
-            <div class="notif-header">
-                <div>
-                    <h3>Notifikasi</h3>
-                    <p>Informasi terkait dokumen, verifikasi, dan sistem</p>
-                </div>
-                <button class="btn-mark">Tandai Semua Telah Dibaca</button>
+            <div id="notif-list">
+                <p>Memuat notifikasi...</p>
             </div>
-
-            <div class="tabs">
-                <span class="tab active">Semua</span>
-                <span class="tab">Dokumen</span>
-                <span class="tab">Verifikasi</span>
-                <span class="tab">Sistem</span>
-            </div>
-
-            <div class="notif-list">';
-            
-foreach ($notifikasi as $n) {
-    echo '<div class="notif-item">'.$n['judul'].'</div>';
-}
-
-echo '
-            </div>
-
         </section>
 
     </main>
-
 </div>
 
+<script>
+fetch("../../Backend/User/notifikasi.php")
+    .then(res => res.json())
+    .then(data => {
+        const list = document.getElementById("notif-list");
+        list.innerHTML = "";
+
+        if (data.length === 0) {
+            list.innerHTML = "<p>Tidak ada notifikasi.</p>";
+            return;
+        }
+
+        data.forEach(n => {
+            list.innerHTML += `
+                <div class="notif-item">
+                    <strong>${n.judul}</strong>
+                    <p>${n.pesan}</p>
+                    <small>${n.created_at}</small>
+                </div>
+            `;
+        });
+    })
+    .catch(() => {
+        document.getElementById("notif-list").innerHTML =
+            "<p>Gagal memuat notifikasi</p>";
+    });
+</script>
+
 </body>
-</html>';
-?>
+</html>
