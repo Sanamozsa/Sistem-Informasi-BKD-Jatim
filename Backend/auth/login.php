@@ -25,7 +25,7 @@ if ($user && password_verify($password, $user['password'])) {
 
     // REDIRECT SESUAI ROLE
     if ($user['role'] === 'admin') {
-        header("Location: ../admin/dashboard.php");
+        header("Location: ../..//Frontend/Admin/Dashboard_Admin.php");
         exit;
     } elseif ($user['role'] === 'pengguna') {
         header("Location: ../../Frontend/user/Dashboard_User.php");

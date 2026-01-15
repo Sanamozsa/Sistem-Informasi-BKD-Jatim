@@ -1,44 +1,65 @@
+<?php
+// ===============================
+// (OPSIONAL) CEK LOGIN
+// ===============================
+session_start();
+/*
+if (!isset($_SESSION['user_id'])) {
+    header("Location: /Sistem-Informasi-BKD-Jatim/Frontend/auth/login.php");
+    exit;
+}
+*/
+
+// ===============================
+// OUTPUT VIEW
+// ===============================
+echo '
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <title>Dokumen Saya</title>
-
-    <!-- CSS ABSOLUTE PATH (AMAN) -->
     <link rel="stylesheet" href="/Sistem-Informasi-BKD-Jatim/Frontend/user/css/dokumen_user.css">
 </head>
 <body>
 
 <div class="app">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
-        <div class="logo">Digital Dokumen</div>
+        <h2 class="logo">Digital Dokumen</h2>
+
         <ul class="menu">
             <li>
                 <a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Dashboard_User.php">
                     Dashboard
                 </a>
             </li>
-            <li class="active">Dokumen Saya</li>
+
+            <li class="active">
+                Dokumen Saya
+            </li>
+
             <li>
                 <a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Notifikasi_User.php">
                     Notifikasi
                 </a>
             </li>
+
             <li>
                 <a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Profil_User.php">
                     Profil
                 </a>
             </li>
-        </ul>
 
-        <div class="logout">
-            <a href="/Sistem-Informasi-BKD-Jatim/Frontend/Logout.php">Keluar</a>
-        </div>
+            <li class="logout">
+                <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
+                   onclick="return confirm(\'Yakin ingin logout?\')">
+                    Logout
+                </a>
+            </li>
+        </ul>
     </aside>
 
-    <!-- CONTENT -->
     <main class="content">
         <header class="header">
             Digital Employer Arsip Dokumen
@@ -47,9 +68,13 @@
         <section class="main-content">
 
             <div class="top-action">
-                <input type="text" class="search" placeholder="Cari Nama Dokumen.....">
+                <input type="text" class="search"
+                       placeholder="Cari Nama Dokumen.....">
+
                 <a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Upload_User.php"
-                   class="btn-upload">+ Upload Dokumen</a>
+                   class="btn-upload">
+                    + Upload Dokumen
+                </a>
             </div>
 
             <h3>Daftar Dokumen Saya</h3>
@@ -75,7 +100,6 @@
 
 </div>
 
-<!-- ================= JS FETCH API ================= -->
 <script>
 fetch("/Sistem-Informasi-BKD-Jatim/Backend/User/dokumen.php")
     .then(res => res.json())
@@ -105,7 +129,9 @@ fetch("/Sistem-Informasi-BKD-Jatim/Backend/User/dokumen.php")
                     <td>
                         <a href="/Sistem-Informasi-BKD-Jatim/${d.file_path}"
                            target="_blank"
-                           class="btn">Lihat</a>
+                           class="btn">
+                           Lihat
+                        </a>
                     </td>
                 </tr>
             `;
@@ -120,3 +146,5 @@ fetch("/Sistem-Informasi-BKD-Jatim/Backend/User/dokumen.php")
 
 </body>
 </html>
+';
+?>

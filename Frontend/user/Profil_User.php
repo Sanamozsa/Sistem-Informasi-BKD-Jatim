@@ -96,21 +96,6 @@ echo '<!DOCTYPE html>
                 </div>
             </div>
 
-            <div class="box">
-                <h4>Keamanan</h4>
-                <hr>
-
-                <div class="security-item">
-                    <strong>Ubah Password</strong>
-                    <a href="#">Ganti Kata Sandi Anda</a>
-                </div>
-
-                <div class="security-item">
-                    <strong>Pertanyaan Keamanan</strong>
-                    <a href="#">Atur dan Ubah pertanyaan keamanan</a>
-                </div>
-            </div>
-
         </section>
     </main>
 </div>
