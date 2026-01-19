@@ -17,7 +17,7 @@
         <ul class="menu">
             <li class="active"><a href="Dashboard_Admin.php">Beranda</a></li>
             <li><a href="Pengguna_Admin.php">Pengguna</a></li>
-            <li><a href="#">Klasifikasi Arsip</a></li>
+            <li><a href="Klasifikasi_Arsip.php">Klasifikasi Arsip</a></li>
             <li><a href="#">Manajemen Arsip</a></li>
             <li><a href="#">Laporan Arsip</a></li>
         </ul>

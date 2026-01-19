@@ -47,7 +47,7 @@ echo '<!DOCTYPE html>
                     <a href="Pengguna_Admin.php">Pengguna</a>
                 </li>
                 <li>
-                    <a href="#">Klasifikasi Arsip</a>
+                    <a href="Klasifikasi_Arsip.php">Klasifikasi Arsip</a>
                 </li>
                 <li>
                     <a href="#">Manajemen Arsip</a>
