@@ -1,7 +1,4 @@
 <?php
-// ===============================
-// (OPSIONAL) CEK LOGIN
-// ===============================
 session_start();
 /*
 if (!isset($_SESSION['user_id'])) {
@@ -9,58 +6,43 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 */
+?>
 
-// ===============================
-// OUTPUT VIEW
-// ===============================
-echo '
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <title>Dokumen Saya</title>
-    <link rel="stylesheet" href="/Sistem-Informasi-BKD-Jatim/Frontend/user/css/dokumen_user.css">
+    <link rel="stylesheet"
+          href="/Sistem-Informasi-BKD-Jatim/Frontend/user/css/dokumen_user.css">
 </head>
 <body>
 
 <div class="app">
 
-    <aside class="sidebar">
-        <h2 class="logo">Digital Dokumen</h2>
+    <!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2 class="logo">Digital Dokumen</h2>
 
-        <ul class="menu">
-            <li>
-                <a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Dashboard_User.php">
-                    Dashboard
-                </a>
-            </li>
+    <ul class="menu">
+        <li><a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Dashboard_User.php">Dashboard</a></li>
+        <li class="active">Dokumen Saya</li>
+        <li><a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Notifikasi_User.php"> Notifikasi</a></li>
+        <li><a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Profil_User.php">Profil</a></li>
 
-            <li class="active">
-                Dokumen Saya
-            </li>
+        <!-- LOGOUT DI BAWAH PROFIL -->
+        <li class="logout">
+            <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
+               onclick="return confirm('Yakin ingin logout?')">
+                Logout
+            </a>
+        </li>
+    </ul>
+</aside>
 
-            <li>
-                <a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Notifikasi_User.php">
-                    Notifikasi
-                </a>
-            </li>
-
-            <li>
-                <a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Profil_User.php">
-                    Profil
-                </a>
-            </li>
-
-            <li class="logout">
-                <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
-                   onclick="return confirm(\'Yakin ingin logout?\')">
-                    Logout
-                </a>
-            </li>
-        </ul>
-    </aside>
-
+    <!-- CONTENT -->
     <main class="content">
+
         <header class="header">
             Digital Employer Arsip Dokumen
         </header>
@@ -146,5 +128,3 @@ fetch("/Sistem-Informasi-BKD-Jatim/Backend/User/dokumen.php")
 
 </body>
 </html>
-';
-?>

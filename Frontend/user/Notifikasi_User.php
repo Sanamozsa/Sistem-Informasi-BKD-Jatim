@@ -18,7 +18,10 @@
             <li><a href="Profil_User.php">Profil</a></li>
         </ul>
         <div class="logout">
-            <a href="../../Backend/auth/logout.php">Keluar</a>
+            <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
+               onclick="return confirm('Yakin ingin logout?')">
+                Logout
+            </a>
         </div>
     </aside>
 

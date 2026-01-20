@@ -18,13 +18,15 @@
             <li class="active"><a href="Dashboard_Admin.php">Beranda</a></li>
             <li><a href="Pengguna_Admin.php">Pengguna</a></li>
             <li><a href="Klasifikasi_Arsip.php">Klasifikasi Arsip</a></li>
-            <li><a href="#">Manajemen Arsip</a></li>
-            <li><a href="#">Laporan Arsip</a></li>
+            <li><a href="Manajemen_Arsip.php">Manajemen Arsip</a></li>
         </ul>
     </div>
 
     <div class="logout">
-        <a href="../../Backend/auth/logout.php">Keluar</a>
+          <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
+                   onclick="return confirm('Yakin ingin logout?')">
+                    Logout
+                </a>
     </div>
 </aside>
 

@@ -35,7 +35,7 @@ echo '<!DOCTYPE html>
             <li class="active">Profil</li>
         </ul>
 
-        <div class="logout"><a href="Logout.php">Keluar</a></div>
+        <div class="logout"><a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php">Keluar</a></div>
     </aside>
 
     <main class="content">

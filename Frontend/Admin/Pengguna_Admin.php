@@ -1,27 +1,4 @@
-<?php
-// ===============================
-// DATA ADMIN (contoh, nanti dari session / database)
-// ===============================
-$nama_admin = "Samuel Nathaniel";
-$role_admin = "Super Admin";
-
-// ===============================
-// DATA PENGGUNA (contoh, nanti dari database)
-// ===============================
-$pengguna = [
-    [
-        "nama" => "Samuel Nathaniel",
-        "username" => "22081010314",
-        "nip" => "22081010314",
-        "role" => "Admin",
-        "status" => "Tidak Aktif"
-    ]
-];
-
-// ===============================
-// OUTPUT HTML
-// ===============================
-echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -32,127 +9,117 @@ echo '<!DOCTYPE html>
 
 <div class="container">
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
-        <div>
+        <div class="sidebar-top">
             <div class="logo">
                 <div class="logo-box">Logo</div>
-                <span>Admin BKD</span>
+                <span>Admin<br>Pengembangan</span>
             </div>
 
             <ul class="menu">
-                <li>
-                    <a href="Dashboard_Admin.php">Beranda</a>
-                </li>
-                <li class="active">
-                    <a href="Pengguna_Admin.php">Pengguna</a>
-                </li>
-                <li>
-                    <a href="Klasifikasi_Arsip.php">Klasifikasi Arsip</a>
-                </li>
-                <li>
-                    <a href="#">Manajemen Arsip</a>
-                </li>
-                <li>
-                    <a href="#">Laporan Arsip</a>
-                </li>
+                <li><a href="Dashboard_Admin.php">Beranda</a></li>
+                <li class="active"><a href="#">Pengguna</a></li>
+                <li><a href="Klasifikasi_Arsip.php">Klasifikasi Arsip</a></li>
+                <li><a href="Manajemen_Arsip.php">Manajemen Arsip</a></li>
             </ul>
         </div>
 
         <div class="logout">
-            <a href="Logout.php">Keluar</a>
+            <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
+                   onclick="return confirm('Yakin ingin logout?')">
+                    Logout
+                </a>
         </div>
     </aside>
 
+    <!-- MAIN -->
     <main class="main">
 
+        <!-- TOPBAR -->
         <header class="topbar">
-            <input type="text" placeholder="Cari Nama Dokumen dan Nama Pegawai...">
+            <input type="text" placeholder="Cari Nama Dokumen dan nama pengguna...">
 
             <div class="profile">
                 <div class="avatar"></div>
-                <div>
-                    <strong>'.$nama_admin.'</strong><br>
-                    <small>'.$role_admin.'</small>
+                <div class="profile-info">
+                    <strong>Samuel Nathaniel</strong><br>
+                    <small>Super Admin</small>
                 </div>
             </div>
         </header>
 
+        <!-- CONTENT -->
         <section class="content">
 
-            <h3>Manajemen Pengguna</h3>
+            <h3>Daftar Pengguna</h3>
 
+            <!-- FORM -->
             <div class="form-box">
-                <form method="post">
-                    <div class="form-row">
-                        <label>Nama Lengkap</label>
-                        <input type="text" name="nama">
-                        <label>NIP</label>
-                        <input type="text" name="nip">
-                    </div>
+                <div class="form-row">
+                    <label>Nama Lengkap</label>
+                    <input type="text">
 
-                    <div class="form-row">
-                        <label>Username</label>
-                        <input type="text" name="username">
-                    </div>
+                    <label>NIP</label>
+                    <input type="text">
+                </div>
 
-                    <div class="form-row">
-                        <label>Email</label>
-                        <input type="email" name="email">
-                    </div>
+                <div class="form-row">
+                    <label>Username</label>
+                    <input type="text">
+                </div>
 
-                    <div class="form-row">
-                        <label>Password</label>
-                        <input type="password" name="password">
-                    </div>
+                <div class="form-row">
+                    <label>Email</label>
+                    <input type="email">
+                </div>
 
-                    <div class="form-row">
-                        <label>Role</label>
-                        <select name="role">
-                            <option>Admin</option>
-                            <option>User</option>
-                        </select>
+                <div class="form-row">
+                    <label>Password</label>
+                    <input type="password">
+                </div>
 
-                        <div class="form-action">
-                            <button type="reset" class="btn clear">Clear</button>
-                            <button type="submit" class="btn primary">Tambahkan</button>
-                        </div>
+                <div class="form-row">
+                    <label>Role Pengguna</label>
+                    <select>
+                        <option>Admin</option>
+                        <option>User</option>
+                    </select>
+
+                    <div class="form-action">
+                        <button class="btn clear">Clear</button>
+                        <button class="btn primary">Tambahkan</button>
                     </div>
-                </form>
+                </div>
             </div>
 
+            <!-- TABLE -->
             <div class="table-box">
-                <h3>Daftar Pengguna</h3>
-
-                <input type="text" class="search" placeholder="Cari Nama Pengguna...">
+                <input type="text" class="search" placeholder="Cari Nama pengguna...">
 
                 <table>
                     <thead>
                         <tr>
-                            <th>Nama</th>
+                            <th>Nama Pengguna</th>
                             <th>Username</th>
                             <th>NIP</th>
                             <th>Role</th>
-                            <th>Status</th>
+                            <th>Keterangan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tbody>';
-                    
-foreach ($pengguna as $p) {
-    echo '<tr>
-            <td>'.$p['nama'].'</td>
-            <td>'.$p['username'].'</td>
-            <td>'.$p['nip'].'</td>
-            <td>'.$p['role'].'</td>
-            <td>'.$p['status'].'</td>
-            <td>
-                <a href="#">Edit</a> |
-                <a href="#">Hapus</a>
-            </td>
-          </tr>';
-}
-
-echo '
+                    <tbody>
+                        <tr>
+                            <td>Samuel Nathaniel</td>
+                            <td>22081010314</td>
+                            <td>22081010314</td>
+                            <td>Admin</td>
+                            <td>Tidak Aktif</td>
+                            <td>
+                                <button class="btn small">Edit</button>
+                                <button class="btn small danger">Hapus</button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -163,5 +130,4 @@ echo '
 </div>
 
 </body>
-</html>';
-?>
+</html>
