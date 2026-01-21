@@ -1,3 +1,6 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -9,16 +12,18 @@ body {
     background: #e5e5e5;
 }
 
-.container {
+.app {
     display: flex;
     height: 100vh;
 }
 
-/* ================= SIDEBAR ================= */
+/* =========================
+   SIDEBAR
+========================= */
 .sidebar {
     width: 220px;
     background: linear-gradient(to bottom, #0b1b5c, #001aff);
-    color: white;
+    color: #fff;
     display: flex;
     flex-direction: column;
 }
@@ -26,12 +31,18 @@ body {
 .logo {
     padding: 20px;
     font-weight: bold;
-    text-align: center;
     background: #0b1b5c;
+    text-align: center;
 }
 
+/* =========================
+   MENU
+========================= */
 .menu {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .menu li {
@@ -39,116 +50,129 @@ body {
 }
 
 .menu li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     display: block;
 }
 
-.menu li:hover,
-.menu li.active {
+/* HOVER MENU NORMAL (KECUALI LOGOUT) */
+.menu li:not(.logout):hover,
+.menu li.active:not(.logout) {
     background: #1f3cff;
 }
 
-/* LOGOUT FIX (ANTI UNGU) */
-.logout {
-    margin-top: auto;
+/* =========================
+   LOGOUT (DI BAWAH PROFIL)
+========================= */
+.menu li.logout {
+    margin-top: 0;           /* FIX: tidak dorong ke bawah */
     background: #001aff;
 }
 
-.logout a {
-    display: block;
-    padding: 15px 20px;
-    color: white;              /* ⬅ FIX UTAMA */
-    text-decoration: none;     /* ⬅ HILANGKAN STYLE LINK */
+.menu li.logout a {
+    color: #ffdede;
+    font-weight: bold;
 }
 
-.logout a:hover {
-    background: #1f3cff;
+.menu li.logout:hover {
+    background: #ff2e2e;
 }
 
-/* ================= CONTENT ================= */
+/* =========================
+   CONTENT
+========================= */
 .content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.topbar {
+.header {
     background: white;
     padding: 15px 25px;
     border-bottom: 1px solid #ccc;
-    font-weight: bold;
 }
 
-.content-body {
-    padding: 30px;
+.main-content {
+    padding: 25px;
+    background: #f0f0f0;
+    height: 100%;
 }
 
-/* ================= UPLOAD CARD ================= */
-.upload-card {
-    background: white;
-    padding: 30px;
-    max-width: 900px;
-}
-
-.upload-card h3 {
+/* =========================
+   SEARCH & UPLOAD
+========================= */
+.top-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
 }
 
-.drop-area {
-    background: #e0e0e0;
-    height: 170px;
-    border-radius: 4px;
-    text-align: center;
-    padding-top: 45px;
-    margin-bottom: 30px;
-    cursor: pointer;
-}
-
-.drop-area .icon {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.detail-title {
-    margin-bottom: 15px;
-}
-
-/* ================= FORM ================= */
-.form-group {
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    background: #e0e0e0;
-    border: none;
-}
-
-.btn-file {
-    position: absolute;
-    right: 0;
-    top: 28px;
-    padding: 10px 14px;
-    border: none;
-    cursor: pointer;
-}
-
-.form-action {
-    text-align: right;
-    margin-top: 25px;
+.search {
+    width: 250px;
+    padding: 8px;
+    border: 1px solid #ccc;
 }
 
 .btn-upload {
-    padding: 10px 22px;
-    background: #d9d9d9;
+    background: #1e40ff;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-upload:hover {
+    background: #1429c9;
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #f5f5f5;
+}
+
+/* =========================
+   STATUS
+========================= */
+.status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+}
+
+.status.approved {
+    background: #28a745;
+}
+
+.status.pending {
+    background: #ffc107;
+    color: black;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+    padding: 6px 12px;
     border: none;
+    background: #ddd;
     cursor: pointer;
+    border-radius: 4px;
 }

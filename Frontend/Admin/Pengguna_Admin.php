@@ -9,29 +9,26 @@
 
 <div class="container">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="sidebar-top">
-            <div class="logo">
-                <div class="logo-box">Logo</div>
-                <span>Admin<br>Pengembangan</span>
-            </div>
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <div class="logo-box">Logo</div>
+        <span class="title">Admin BKD</span>
+    </div>
 
-            <ul class="menu">
-                <li><a href="Dashboard_Admin.php">Beranda</a></li>
-                <li class="active"><a href="#">Pengguna</a></li>
-                <li><a href="Klasifikasi_Arsip.php">Klasifikasi Arsip</a></li>
-                <li><a href="Manajemen_Arsip.php">Manajemen Arsip</a></li>
-            </ul>
-        </div>
+    <ul class="menu">
+        <li ><a href="Dashboard_Admin.php">Beranda</a></li>
+        <li class="active"><a href="Pengguna_Admin.php">Pengguna</a></li>
+        <li><a href="Klasifikasi_Arsip.php">Klasifikasi Arsip</a></li>
+        <li><a href="Manajemen_Arsip.php">Manajemen Arsip</a></li>
+    </ul>
 
-        <div class="logout">
-            <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
-                   onclick="return confirm('Yakin ingin logout?')">
-                    Logout
-                </a>
-        </div>
-    </aside>
+    <div class="logout">
+        <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
+           onclick="return confirm('Yakin ingin logout?')">
+            Logout
+        </a>
+    </div>
+</aside>
 
     <!-- MAIN -->
     <main class="main">

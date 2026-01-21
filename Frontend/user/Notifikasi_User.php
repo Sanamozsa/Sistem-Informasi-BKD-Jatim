@@ -9,21 +9,25 @@
 
 <div class="app">
 
-    <aside class="sidebar">
-        <div class="logo">Digital Dokumen</div>
-        <ul class="menu">
-            <li><a href="Dashboard_User.php">Dashboard</a></li>
-            <li><a href="Dokumen_User.php">Dokumen Saya</a></li>
-            <li class="active">Notifikasi</li>
-            <li><a href="Profil_User.php">Profil</a></li>
-        </ul>
-        <div class="logout">
+<aside class="sidebar">
+    <h2 class="logo">Digital Dokumen</h2>
+
+    <ul class="menu">
+        <li><a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Dashboard_User.php">Dashboard</a></li>
+        <li><a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Dokumen_User.php">Dokumen Saya</a></li>
+       <li class="active">Notifikasi</li>
+        <li><a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Profil_User.php">Profil</a></li>
+
+        <!-- LOGOUT DI BAWAH PROFIL -->
+        <li class="logout">
             <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
                onclick="return confirm('Yakin ingin logout?')">
                 Logout
             </a>
-        </div>
-    </aside>
+        </li>
+    </ul>
+</aside>
+
 
     <main class="content">
 
