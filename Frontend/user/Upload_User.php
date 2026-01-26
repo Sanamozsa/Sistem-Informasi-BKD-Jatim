@@ -3,34 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Upload Dokumen</title>
-    <link rel="stylesheet" href="css/Upload_User.css">
+    <link rel="stylesheet" href="css/upload_user.css">
 </head>
 <body>
 
 <div class="container">
 
-    <!-- SIDEBAR -->
+    <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar">
-        <h2 class="logo">Digital Dokumen</h2>
+        <div class="logo">
+            Digital<br>Dokumen
+        </div>
 
         <ul class="menu">
-            <li>
-                <a href="Dashboard_User.php">Dashboard</a>
-            </li>
+            <li><a href="Dashboard_User.php">Dashboard</a></li>
+            <li class="active"><a href="Dokumen_User.php">Dokumen Saya</a></li>
+            <li><a href="Notifikasi_User.php">Notifikasi</a></li>
+            <li><a href="Profil_User.php">Profil</a></li>
 
-            <li class="active">
-                <a href="Dokumen_User.php">Dokumen Saya</a>
-            </li>
-
-            <li>
-                <a href="Notifikasi_User.php">Notifikasi</a>
-            </li>
-
-            <li>
-                <a href="Profil_User.php">Profil</a>
-            </li>
-
-            <!-- LOGOUT DI BAWAH PROFIL -->
             <li class="logout">
                 <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
                    onclick="return confirm('Yakin ingin logout?')">
@@ -40,7 +30,7 @@
         </ul>
     </aside>
 
-    <!-- CONTENT -->
+    <!-- ================= CONTENT ================= -->
     <main class="content">
 
         <header class="topbar">
@@ -50,17 +40,19 @@
         <section class="content-body">
 
             <div class="upload-card">
+
                 <h3>Unggah Dokumen</h3>
 
                 <div class="drop-area">
                     <div class="icon">☁</div>
                     <p>Seret dan Letakkan File di sini atau Klik untuk Unggah</p>
-                    <input type="file">
+                    <input type="file" name="file">
                 </div>
 
-                <h3 class="detail-title">Detail Dokumen</h3>
+                <h4>Detail Dokumen</h4>
 
                 <form method="post" enctype="multipart/form-data">
+
                     <div class="form-group">
                         <label>Nama Dokumen</label>
                         <input type="text" name="nama_dokumen"
@@ -78,15 +70,16 @@
                         <input type="date" name="tanggal_upload">
                     </div>
 
-                    <div class="form-action">
-                        <button type="submit" class="btn-upload">
-                            Unggah Dokumen
-                        </button>
-                    </div>
+                    <button type="submit" class="btn-upload">
+                        Unggah Dokumen
+                    </button>
+
                 </form>
+
             </div>
 
         </section>
+
     </main>
 
 </div>

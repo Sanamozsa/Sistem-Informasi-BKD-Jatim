@@ -1,4 +1,4 @@
-/* RESET */
+/* ===================== RESET ===================== */
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +11,13 @@ html, body {
     background: #f2f2f2;
 }
 
-/* LAYOUT */
+/* ===================== LAYOUT ===================== */
 .app {
     display: flex;
     height: 100vh;
 }
 
-/* SIDEBAR */
+/* ===================== SIDEBAR ===================== */
 .sidebar {
     width: 220px;
     background: linear-gradient(to bottom, #0b1b5c, #001aff);
@@ -52,21 +52,28 @@ html, body {
     background: #1f3cff;
 }
 
+/* ===================== LOGOUT ===================== */
 .logout {
     margin-top: auto;
     padding: 15px 20px;
-    background: #001aff;
+    background: #001aff;      /* Biru (default) */
+    color: #fff;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-/* CONTENT */
+.logout:hover {
+    background: #ff2e2e;      /* Merah saat hover */
+}
+
+/* ===================== CONTENT ===================== */
 .content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* HEADER */
+/* ===================== HEADER ===================== */
 .header {
     background: #fff;
     padding: 15px 20px;
@@ -74,14 +81,14 @@ html, body {
     border-bottom: 1px solid #ccc;
 }
 
-/* MAIN CONTENT */
+/* ===================== MAIN CONTENT ===================== */
 .main-content {
     background: #e6e6e6;
     padding: 20px;
     flex: 1;
 }
 
-/* NOTIF HEADER */
+/* ===================== NOTIF HEADER ===================== */
 .notif-header {
     display: flex;
     justify-content: space-between;
@@ -107,7 +114,7 @@ html, body {
     border-radius: 3px;
 }
 
-/* TABS */
+/* ===================== TABS ===================== */
 .tabs {
     display: flex;
     gap: 20px;
@@ -126,7 +133,7 @@ html, body {
     border-bottom: 2px solid #001aff;
 }
 
-/* NOTIFICATION LIST */
+/* ===================== NOTIFICATION LIST ===================== */
 .notif-list {
     display: flex;
     flex-direction: column;

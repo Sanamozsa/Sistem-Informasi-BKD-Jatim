@@ -9,29 +9,27 @@
 
 <div class="app">
 
-    <!-- SIDEBAR -->
-<aside class="sidebar">
-    <div class="logo">
-        <span>Digital<br>Dokumen</span>
-    </div>
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+        <div class="logo">
+            Digital<br>Dokumen
+        </div>
 
-    <ul class="menu">
-        <li><a href="Dashboard_User.php">Dashboard</a></li>
-        <li><a href="Dokumen_User.php">Dokumen Saya</a></li>
-        <li><a href="Notifikasi_User.php">Notifikasi</a></li>
-        <li class="active"><a href="Profil_User.php">Profil</a></li>
-       
-        <li class="logout">
-            <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
-               onclick="return confirm('Yakin ingin logout?')">
-                Logout
-            </a>
-        </li>
-    </ul>
-</aside>
+        <ul class="menu">
+            <li><a href="Dashboard_User.php">Dashboard</a></li>
+            <li><a href="Dokumen_User.php">Dokumen Saya</a></li>
+            <li><a href="Notifikasi_User.php">Notifikasi</a></li>
+            <li class="active"><a href="Profil_User.php">Profil</a></li>
+            <li class="logout">
+                <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
+                   onclick="return confirm('Yakin ingin logout?')">
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </aside>
 
-
-    <!-- CONTENT -->
+    <!-- ============ CONTENT ============ -->
     <main class="content">
 
         <header class="header">
@@ -45,7 +43,6 @@
                 <p>Informasi terkait pengguna</p>
             </div>
 
-            <!-- CARD USER -->
             <div class="user-card">
                 <div class="user-text">
                     <h3>Selamat Datang, Nama Pengguna</h3>
@@ -59,7 +56,6 @@
                 </div>
             </div>
 
-            <!-- DETAIL PROFIL -->
             <div class="box">
                 <h4>Detail Profil</h4>
                 <hr>
@@ -67,33 +63,30 @@
                 <div class="form-grid">
                     <div>
                         <label>Nama Lengkap</label>
-                        <input type="text" placeholder="Nama Lengkap" readonly>
+                        <input type="text" readonly>
                     </div>
-
                     <div>
                         <label>Email</label>
-                        <input type="text" placeholder="Email" readonly>
+                        <input type="text" readonly>
                     </div>
-
                     <div>
                         <label>Alamat</label>
-                        <input type="text" placeholder="Alamat" readonly>
+                        <input type="text" readonly>
                     </div>
-
                     <div>
                         <label>Nomor Telepon</label>
-                        <input type="text" placeholder="Nomor Telepon" readonly>
+                        <input type="text" readonly>
                     </div>
-
                     <div>
                         <label>Tempat, Tanggal Lahir</label>
-                        <input type="text" placeholder="TTL" readonly>
+                        <input type="text" readonly>
                     </div>
                 </div>
             </div>
 
         </section>
     </main>
+
 </div>
 
 </body>

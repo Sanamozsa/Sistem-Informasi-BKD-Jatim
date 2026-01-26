@@ -1,178 +1,174 @@
-/* =========================
+/* =====================
    RESET & GLOBAL
-========================= */
+===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background: #e5e5e5;
 }
 
-.app {
+/* =====================
+   LAYOUT
+===================== */
+.container {
     display: flex;
-    height: 100vh;
 }
 
-/* =========================
+/* =====================
    SIDEBAR
-========================= */
+===================== */
 .sidebar {
-    width: 220px;
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
     background: linear-gradient(to bottom, #0b1b5c, #001aff);
     color: #fff;
-    display: flex;
-    flex-direction: column;
 }
 
 .logo {
     padding: 20px;
-    font-weight: bold;
-    background: #0b1b5c;
     text-align: center;
+    background: #0b1b5c;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-/* =========================
+/* =====================
    MENU
-========================= */
+===================== */
 .menu {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.menu li {
-    padding: 15px 20px;
 }
 
 .menu li a {
+    display: block;
+    padding: 15px 20px;
     color: #fff;
     text-decoration: none;
-    display: block;
 }
 
-/* HOVER MENU NORMAL (KECUALI LOGOUT) */
-.menu li:not(.logout):hover,
-.menu li.active:not(.logout) {
+.menu li.active a,
+.menu li:not(.logout):hover a {
     background: #1f3cff;
 }
 
-/* =========================
-   LOGOUT (DI BAWAH PROFIL)
-========================= */
-.menu li.logout {
-    margin-top: 0;           /* FIX: tidak dorong ke bawah */
-    background: #001aff;
-}
-
+/* LOGOUT */
 .menu li.logout a {
+    background: #001aff;
     color: #ffdede;
     font-weight: bold;
 }
 
-.menu li.logout:hover {
+.menu li.logout a:hover {
     background: #ff2e2e;
 }
 
-/* =========================
+/* =====================
    CONTENT
-========================= */
+===================== */
 .content {
-    flex: 1;
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.header {
-    background: white;
+/* TOPBAR */
+.topbar {
+    background: #ffffff;
     padding: 15px 25px;
     border-bottom: 1px solid #ccc;
+    font-weight: bold;
 }
 
-.main-content {
+/* BODY */
+.content-body {
+    padding: 30px;
+}
+
+/* =====================
+   UPLOAD CARD
+===================== */
+.upload-card {
+    background: #ffffff;
+    max-width: 600px;
     padding: 25px;
-    background: #f0f0f0;
-    height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* =========================
-   SEARCH & UPLOAD
-========================= */
-.top-action {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.upload-card h3 {
     margin-bottom: 15px;
 }
 
-.search {
-    width: 250px;
-    padding: 8px;
-    border: 1px solid #ccc;
+.upload-card h4 {
+    margin: 20px 0 10px;
 }
 
+/* =====================
+   DROP AREA
+===================== */
+.drop-area {
+    border: 2px dashed #999;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    background: #fafafa;
+}
+
+.drop-area input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.drop-area .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* =====================
+   FORM
+===================== */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* =====================
+   BUTTON
+===================== */
 .btn-upload {
     background: #1e40ff;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
     border-radius: 4px;
-    font-size: 14px;
+    cursor: pointer;
 }
 
 .btn-upload:hover {
     background: #1429c9;
-}
-
-/* =========================
-   TABLE
-========================= */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-}
-
-th, td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-th {
-    background: #f5f5f5;
-}
-
-/* =========================
-   STATUS
-========================= */
-.status {
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    color: white;
-}
-
-.status.approved {
-    background: #28a745;
-}
-
-.status.pending {
-    background: #ffc107;
-    color: black;
-}
-
-/* =========================
-   BUTTON
-========================= */
-.btn {
-    padding: 6px 12px;
-    border: none;
-    background: #ddd;
-    cursor: pointer;
-    border-radius: 4px;
 }
