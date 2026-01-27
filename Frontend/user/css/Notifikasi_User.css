@@ -33,8 +33,12 @@ html, body {
     text-align: center;
 }
 
+/* ===================== MENU ===================== */
 .menu {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .menu li {
@@ -47,6 +51,7 @@ html, body {
     display: block;
 }
 
+/* menu hover & active */
 .menu li:hover,
 .menu li.active {
     background: #1f3cff;
@@ -55,15 +60,22 @@ html, body {
 /* ===================== LOGOUT ===================== */
 .logout {
     margin-top: auto;
+    padding: 0; /* padding dipindah ke <a> */
+}
+
+/* kondisi NORMAL (biru) */
+.logout a {
+    display: block;
     padding: 15px 20px;
-    background: #001aff;      /* Biru (default) */
+    background: #001aff;
     color: #fff;
-    cursor: pointer;
+    text-decoration: none;
     transition: background 0.3s ease;
 }
 
-.logout:hover {
-    background: #ff2e2e;      /* Merah saat hover */
+/* saat cursor mendekati / hover (merah) */
+.logout a:hover {
+    background: #ff2e2e;
 }
 
 /* ===================== CONTENT ===================== */
@@ -88,7 +100,7 @@ html, body {
     flex: 1;
 }
 
-/* ===================== NOTIF HEADER ===================== */
+/* ===================== NOTIFICATION ===================== */
 .notif-header {
     display: flex;
     justify-content: space-between;
@@ -133,7 +145,7 @@ html, body {
     border-bottom: 2px solid #001aff;
 }
 
-/* ===================== NOTIFICATION LIST ===================== */
+/* ===================== NOTIF LIST ===================== */
 .notif-list {
     display: flex;
     flex-direction: column;
@@ -141,7 +153,7 @@ html, body {
 }
 
 .notif-item {
-    height: 45px;
+    padding: 10px 15px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;

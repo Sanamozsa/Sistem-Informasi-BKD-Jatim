@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #e5e5e5;
+    background: #f0f0f0; /* samakan tone agar tidak ada ilusi shadow */
 }
 
 /* ================= LAYOUT ================= */
@@ -18,60 +18,61 @@ body {
 
 /* ================= SIDEBAR ================= */
 .sidebar {
-    width: 240px;
-    background: linear-gradient(to bottom, #071a63, #001aff);
+    width: 220px;
+    background: #001aff;        /* SOLID COLOR → no shadow */
     color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    /* PASTIKAN tidak ada shadow */
+    box-shadow: none;
+    border-right: none;
 }
 
 /* LOGO */
 .logo {
-    background: #071a63;
-    padding: 25px 10px;
+    background: #001aff;
+    padding: 20px;
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* ================= MENU ================= */
-/* ❗ TANPA FLEX */
 .menu {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-/* ITEM */
 .menu li {
-    width: 100%;
+    padding: 15px 20px;
 }
 
-/* LINK */
 .menu li a {
     display: block;
-    padding: 16px 20px;
     color: #fff;
     text-decoration: none;
-    font-size: 15px;
-    background: linear-gradient(to bottom, #0b1b5c, #001aff);
 }
 
-/* HOVER MENU */
-.menu li:not(.logout) a:hover {
+/* HOVER MENU NORMAL (KECUALI LOGOUT) */
+.menu li:not(.logout):hover,
+.menu li.active:not(.logout) {
     background: #1f3cff;
 }
 
-/* ACTIVE MENU */
-.menu li.active a {
-    background: #2f45ff;
-    font-weight: bold;
-}
-
 /* ================= LOGOUT ================= */
-.menu li.logout a {
+.menu li.logout {
     background: #001aff;
+}
+
+.menu li.logout a {
+    color: #ffdede;
     font-weight: bold;
 }
 
-/* LOGOUT HOVER (MERAH) */
-.menu li.logout a:hover {
+.menu li.logout:hover {
     background: #ff2e2e;
 }
 
