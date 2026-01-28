@@ -58,23 +58,13 @@ html, body {
 }
 
 /* ===================== LOGOUT ===================== */
-.logout {
-    margin-top: auto;
-    padding: 0; /* padding dipindah ke <a> */
-}
-
-/* kondisi NORMAL (biru) */
-.logout a {
-    display: block;
-    padding: 15px 20px;
+.menu li.logout a {
     background: #001aff;
-    color: #fff;
-    text-decoration: none;
-    transition: background 0.3s ease;
+    color: #ffdede;
+    font-weight: bold;
 }
 
-/* saat cursor mendekati / hover (merah) */
-.logout a:hover {
+.menu li.logout a:hover {
     background: #ff2e2e;
 }
 

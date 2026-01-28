@@ -19,23 +19,18 @@ body {
 /* ================= SIDEBAR ================= */
 .sidebar {
     width: 220px;
-    background: #001aff;        /* SOLID COLOR → no shadow */
+    background: linear-gradient(to bottom, #0b1b5c, #001aff);
     color: #fff;
     display: flex;
     flex-direction: column;
-
-    /* PASTIKAN tidak ada shadow */
-    box-shadow: none;
-    border-right: none;
 }
 
 /* LOGO */
 .logo {
-    background: #001aff;
     padding: 20px;
-    text-align: center;
     font-weight: bold;
-    font-size: 16px;
+    background: #0b1b5c;
+    text-align: center;
 }
 
 /* ================= MENU ================= */
