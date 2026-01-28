@@ -18,7 +18,7 @@
        <li class="active">Notifikasi</li>
         <li><a href="/Sistem-Informasi-BKD-Jatim/Frontend/user/Profil_User.php">Profil</a></li>
 
-        <!-- LOGOUT DI BAWAH PROFIL -->
+        <!-- LOGOUT -->
         <li class="logout">
             <a href="/Sistem-Informasi-BKD-Jatim/Backend/auth/logout.php"
                onclick="return confirm('Yakin ingin logout?')">

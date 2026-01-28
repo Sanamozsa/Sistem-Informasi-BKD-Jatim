@@ -58,16 +58,19 @@ html, body {
 }
 
 /* ===================== LOGOUT ===================== */
-.menu li.logout a {
+.menu li.logout {
+    margin-top: 0;           
     background: #001aff;
+}
+
+.menu li.logout a {
     color: #ffdede;
     font-weight: bold;
 }
 
-.menu li.logout a:hover {
+.menu li.logout:hover {
     background: #ff2e2e;
 }
-
 /* ===================== CONTENT ===================== */
 .content {
     flex: 1;
